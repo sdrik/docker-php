@@ -1,7 +1,7 @@
 [ -n "${SAML_SP_ENTITYID}" ] || return
 
-a2enmod -q auth_mellon
-a2enconf -q saml
+apache_mods+=(+auth_mellon)
+apache_confs+=(+saml)
 
 export SAML_SP_KEY=${SAML_SP_KEY:-/samldata/sp.key}
 export SAML_SP_KEY_ALG=${SAML_SP_KEY_ALG:-rsa:4096}

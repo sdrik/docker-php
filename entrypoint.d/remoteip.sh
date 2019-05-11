@@ -1,1 +1,1 @@
-[ -n "${FRONTEND_PROXY}" ] && a2enmod -q remoteip
+[ -n "${FRONTEND_PROXY}" ] && apache_mods+=(+remoteip)

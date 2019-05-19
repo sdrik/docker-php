@@ -9,7 +9,7 @@ COPY apache2/ /etc/apache2/
 
 ENTRYPOINT ["docker-php-base-entrypoint"]
 
-ENV FRONTEND_PROXY traefik.docker_default
+ENV FRONTEND_PROXY traefik
 
 CMD ["apache2-foreground"]
 ONBUILD CMD ["apache2-foreground"]

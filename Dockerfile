@@ -6,6 +6,7 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 COPY entrypoint.sh /usr/local/bin/docker-php-base-entrypoint
 COPY entrypoint.d/ /etc/entrypoint.d/
 COPY apache2/ /etc/apache2/
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 ENTRYPOINT ["docker-php-base-entrypoint"]
 
